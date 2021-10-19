@@ -1,8 +1,8 @@
 ---
-title: My first Blog Post
+title: My second Blog Post
 description: Learning how to use @nuxt/content to create a blog
-img: first-blog-post.jpg
-alt: my first blog post
+img: second-blog-post.jpg
+alt: my seoncd blog post
 
 author:
   name: Selasak
@@ -30,9 +30,9 @@ export default {
 ```
 
 
-# My first blog post
+# My second blog post
 
-Welcome to my first blog post using content module
+Welcome to my second blog post using content module
 
 ## This is a heading
 
