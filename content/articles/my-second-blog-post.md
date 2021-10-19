@@ -1,6 +1,6 @@
 ---
 title: My second Blog Post
-description: Learning how to use @nuxt/content to create a blog
+description: Lorem is a placeholder text. In this blog, we will learn why lorem is used in most placeholder for many developers.
 img: second-blog-post.jpg
 alt: my second blog post
 
