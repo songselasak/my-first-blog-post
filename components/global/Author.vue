@@ -1,6 +1,6 @@
 <template>
   <div>
-    <img :src="author.image" />
+    <img :src="require(`~/assets/images/${author.image}`)" />
     <div>
       <h4>Author</h4>
       <p>{{ author.name }}</p>

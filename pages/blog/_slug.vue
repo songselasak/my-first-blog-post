@@ -1,5 +1,6 @@
 <template>
   <article>
+    <AppSearchInput />
       <nav>
         <ul>
             <li v-for="link of article.toc" :key="link.id">

@@ -7,7 +7,7 @@ alt: my third blog post
 author:
   name: Selasak
   bio: All about Selasak
-  image: https://images.unsplash.com/photo-1593643946890-b5b85ade6451?ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1978&q=80
+  image: profile-author-1.jpg
 
 ---
 
