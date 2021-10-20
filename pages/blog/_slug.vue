@@ -1,28 +1,28 @@
 <template>
-  <article>
+  <article class="w-4/6 mx-auto my-4">
     
-    <div class="container mx-auto px-4">
+    <div>
       <AppSearchInput />
 
-      <h1>{{ article.title }}</h1>
-      <p>{{ article.description }}</p>
-      <p>Article last updated: {{ formatDate(article.updatedAt) }}</p>
+      <h1 class="font-bold text-4xl pt-4">{{ article.title }}</h1>
+      <p class="pt-4">{{ article.description }}</p>
+      <p class="pb-4">Article last updated: {{ formatDate(article.updatedAt) }}</p>
       <nav>
         <ul>
             <li v-for="link of article.toc" :key="link.id">
-            <NuxtLink class="hover:underline" :class="{ 'py-2 text-green-700': link.depth === 2, 'ml-2 pb-2 text-green-400': link.depth === 3 }" :to="`#${link.id}`">{{ link.text }}</NuxtLink>
+            <NuxtLink class="hover:underline" :class="{ 'py-2 font-bold': link.depth === 2, 'ml-2 pb-2': link.depth === 3 }" :to="`#${link.id}`">{{ link.text }}</NuxtLink>
             </li>
         </ul>
       </nav>
     </div>
-    <div class="container mx-auto px-4">
-      <img :src="require(`~/assets/images/${article.img}`)" :alt="article.alt" class="container" />
+    <div>
+      <img :src="require(`~/assets/images/${article.img}`)" :alt="article.alt" class="container my-4" />
     </div>
     
     
     <!-- <pre>{{ article }}</pre> -->
 
-    <div class="container mx-auto px-4">
+    <div>
       <nuxt-content :document="article" />
 
     <div class=" bg-gray-100 rounded">
