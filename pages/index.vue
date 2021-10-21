@@ -73,7 +73,7 @@
         v-decorator="['author', { rules: [{ required: true, message: 'Please input the blog author' }] }]"
       />
     </a-form-item>
-    <a-form-item label="Image">
+    <!-- <a-form-item label="Image">
       <a-upload
     name="file"
     :multiple="true"
@@ -83,7 +83,7 @@
   >
     <a-button> <a-icon type="upload" /> Click to Upload </a-button>
   </a-upload>
-    </a-form-item>
+    </a-form-item> -->
     <a-form-item :wrapper-col="{ span: 12, offset: 5 }">
       <a-button type="primary" html-type="submit">
         Submit
@@ -104,7 +104,24 @@ export default {
     return {
       articles,
     }
-  }
+  },
+  data() {
+    return {
+      formLayout: 'horizontal',
+      form: this.$form.createForm(this, { name: 'coordinated' }),
+    };
+  },
+  methods: {
+    handleSubmit(e) {
+      e.preventDefault();
+      this.form.validateFields((err, values) => {
+        if (!err) {
+          console.log('Received values of form: ', values);
+          // TODO Submit values to somewhere
+        }
+      });
+    },
+  },
 }
 </script>
 
