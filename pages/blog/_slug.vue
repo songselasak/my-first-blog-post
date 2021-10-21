@@ -25,9 +25,14 @@
     <div>
       <nuxt-content :document="article" />
 
+<NuxtLink
+      :to="`/blog/author/${article.author.name}`"
+    >
     <div class=" bg-gray-100 rounded">
       <author :author="article.author" />
     </div>
+</NuxtLink>
+    
     
       <prev-next :prev="prev" :next="next" />
     </div>
