@@ -56,7 +56,42 @@
         </NuxtLink>
       </li>
     </ul>
+    <h1 class="font-bold text-4xl mb-6">Submit Blog</h1>
+    <a-form :form="form" :label-col="{ span: 5 }" :wrapper-col="{ span: 12 }" @submit="handleSubmit">
+    <a-form-item label="Title">
+      <a-input
+        v-decorator="['title', { rules: [{ required: true, message: 'Please input the blog title' }] }]"
+      />
+    </a-form-item>
+    <a-form-item label="Description">
+      <a-input
+        v-decorator="['description', { rules: [{ required: true, message: 'Please input the blog description' }] }]"
+      />
+    </a-form-item>
+    <a-form-item label="Author">
+      <a-input
+        v-decorator="['author', { rules: [{ required: true, message: 'Please input the blog author' }] }]"
+      />
+    </a-form-item>
+    <a-form-item label="Image">
+      <a-upload
+    name="file"
+    :multiple="true"
+    action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
+    :headers="headers"
+    @change="handleChange"
+  >
+    <a-button> <a-icon type="upload" /> Click to Upload </a-button>
+  </a-upload>
+    </a-form-item>
+    <a-form-item :wrapper-col="{ span: 12, offset: 5 }">
+      <a-button type="primary" html-type="submit">
+        Submit
+      </a-button>
+    </a-form-item>
+  </a-form>
   </div>
+  
 </template>
 
 <script>
