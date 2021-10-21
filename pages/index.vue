@@ -3,6 +3,31 @@
     <TheHeader />
 
     <h1 class="font-bold text-4xl mb-6">Blog Posts</h1>
+  
+  <div>
+    <a-button type="primary">
+      Primary
+    </a-button>
+    <a-button>Default</a-button>
+    <a-button type="dashed">
+      Dashed
+    </a-button>
+    <a-button type="danger">
+      Danger
+    </a-button>
+    <a-config-provider :auto-insert-space-in-button="false">
+      <a-button type="primary">
+        按钮
+      </a-button>
+    </a-config-provider>
+    <a-button type="primary">
+      按钮
+    </a-button>
+    <a-button type="link">
+      Link
+    </a-button>
+  </div>
+
     <ul class="flex flex-wrap">
       <li
         v-for="article of articles"
