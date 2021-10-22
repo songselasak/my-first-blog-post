@@ -53,21 +53,26 @@
 </template>
 
 <script>
+import {mapState, mapGetters, mapActions, mapMutations} from 'vuex'
 export default {
-  async asyncData({ $content, params }) {
-    const articles = await $content('articles')
-      .where({
-        'author.name': {
-          $regex: [params.author, 'i']
-        }
-      })
-      .without('body')
-      .sortBy('createdAt', 'asc')
-      .fetch()
-    return {
-      articles
-    }
+  // async asyncData({ $content, params }) {
+  //   const articles = await $content('articles')
+  //     .where({
+  //       'author.name': {
+  //         $regex: [params.author, 'i']
+  //       }
+  //     })
+  //     .without('body')
+  //     .sortBy('createdAt', 'asc')
+  //     .fetch()
+  //   return {
+  //     articles
+  //   }
+  // },
+    async fetch({ store }) {
+    await store.dispatch('getArticles')
   },
+  computed: mapState(['articles']),
   methods: {
     formatDate(date) {
       const options = { year: 'numeric', month: 'long', day: 'numeric' }

@@ -95,16 +95,22 @@
 </template>
 
 <script>
+import {mapState, mapGetters, mapActions, mapMutations} from 'vuex'
+
 export default {
-  async asyncData({ $content, params }) {
-    const articles = await $content('articles')
-      .only(['title', 'description', 'img', 'slug', 'author'])
-      .sortBy('createdAt', 'desc')
-      .fetch()
-    return {
-      articles,
-    }
+  // async asyncData({ $content, params }) {
+  //   const articles = await $content('articles')
+  //     .only(['title', 'description', 'img', 'slug', 'author'])
+  //     .sortBy('createdAt', 'desc')
+  //     .fetch()
+  //   return {
+  //     articles,
+  //   }
+  // },
+  async fetch({ store }) {
+    await store.dispatch('getArticles')
   },
+  computed: mapState(['articles']),
   data() {
     return {
       formLayout: 'horizontal',
@@ -121,6 +127,7 @@ export default {
         }
       });
     },
+    // ...mapActions(['getArticles'])
   },
 }
 </script>
